@@ -387,6 +387,7 @@ class patroni (
   String $service_name = 'patroni',
   String $service_ensure = 'running',
   Boolean $service_enable = true,
+  Hash $tags = {},
   Optional[String[1]] $custom_pip_provider = undef,
 ) {
   if $manage_postgresql {
@@ -533,7 +534,7 @@ class patroni (
     group   => $config_group,
     mode    => $config_mode,
     content => template('patroni/postgresql.yml.erb'),
-    notify  => Service['patroni'],
+    notify  => Exec['extract_current_dcs'],
   }
 
   if $install_method == 'pip' {

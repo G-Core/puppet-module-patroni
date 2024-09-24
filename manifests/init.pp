@@ -534,7 +534,6 @@ class patroni (
     group   => $config_group,
     mode    => $config_mode,
     content => template('patroni/postgresql.yml.erb'),
-    notify  => Exec['extract_current_dcs'],
   }
 
   if $install_method == 'pip' {

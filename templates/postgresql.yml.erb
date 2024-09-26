@@ -11,6 +11,7 @@ bootstrap:
     master_start_timeout: <%= @dcs_master_start_timeout %>
     synchronous_mode: <%= @dcs_synchronous_mode %>
     synchronous_mode_strict: <%= @dcs_synchronous_mode_strict %>
+    synchronous_node_count: <%= @dcs_synchronous_node_count %>
     postgresql:
       use_pg_rewind: <%= @dcs_postgresql_use_pg_rewind ? 'true' : 'false' %>
       use_slots: <%= @dcs_postgresql_use_slots ? 'true' : 'false' %>

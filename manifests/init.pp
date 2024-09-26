@@ -19,6 +19,8 @@
 # @param dcs_synchronous_mode
 #   Refer to Patroni Dynamic Configuration Settings `synchronous_mode` setting
 # @param dcs_synchronous_mode_strict
+#   Refer to Patroni Dynamic Configuration Settings `synchronous_node_count` setting
+# @param dcs_synchronous_node_count
 #   Refer to Patroni Dynamic Configuration Settings `synchronous_mode_strict` setting
 # @param dcs_postgresql_use_pg_rewind
 #   Refer to Patroni Dynamic Configuration Settings `postgresql_use_pg_rewind` setting
@@ -257,6 +259,7 @@ class patroni (
   Integer $dcs_master_start_timeout = 300,
   Boolean $dcs_synchronous_mode = false,
   Boolean $dcs_synchronous_mode_strict = false,
+  Integer $dcs_synchronous_node_count = false,
   Boolean $dcs_postgresql_use_pg_rewind = true,
   Boolean $dcs_postgresql_use_slots = true,
   Hash $dcs_postgresql_recovery_conf = {},
